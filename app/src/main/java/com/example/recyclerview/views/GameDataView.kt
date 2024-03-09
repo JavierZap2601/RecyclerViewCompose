@@ -11,11 +11,11 @@ import androidx.compose.ui.tooling.preview.Preview
 
 @Preview(showBackground = true)
 @Composable
-fun GameDataView(){
+fun GameDataView(console:String ="Juego", price: Int = 140){
     Row(horizontalArrangement = Arrangement.SpaceBetween,
         modifier = Modifier.fillMaxWidth()
     ){
-        Text(text="Xbox 360")
-        Text(text="$1200 MXN",color = Color(0xFF329C05))
+        Text(text=console)
+        Text(text="$price MXN",color = Color(0xFF329C05))
     }
 }

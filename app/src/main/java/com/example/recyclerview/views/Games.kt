@@ -21,28 +21,29 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.recyclerview.R
+import com.example.recyclerview.models.Game
 
-@Preview(showBackground = true)
+//@Preview(showBackground = true)
 @Composable
-fun CardGame(){
+fun CardGame(game: Game){
     Card(modifier = Modifier.padding(8.dp)){
         Row(modifier = Modifier.fillMaxWidth()){
             Image(
                 modifier = Modifier
                     .height(150.dp)
                     .width(120.dp),
-                painter = painterResource(id = R.drawable.halo),
-                contentDescription = "Halo 3 Box Art",
+                painter = painterResource(id = game.image),
+                contentDescription = "Game Image",
                 contentScale = ContentScale.Crop
             )
             Spacer(modifier = Modifier.width(8.dp))
             Column {
                 Text(
-                    text = "Halo 3",
+                    text = game.name,
                     modifier = Modifier.padding(top = 8.dp),
                     color = Color(0xFFEA80FC)
                 )
-                GameDataView()
+                GameDataView(game.console, game.price)
 
                 Button(onClick = {}){
                     Text(text = "Comprar")

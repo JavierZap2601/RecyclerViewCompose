@@ -6,5 +6,5 @@ data class Game(
     val name : String,
     val price: Int,
     val console: String,
-    @DrawableRes val Image: Int
+    @DrawableRes val image: Int
 )
